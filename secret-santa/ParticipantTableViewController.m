@@ -14,7 +14,7 @@
 
 @implementation ParticipantTableViewController
 
-@synthesize participants;
+@synthesize participants, groupParticipants, existingParticipants;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,9 +33,11 @@
     self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     participants = [[NSMutableDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"participants" ofType:@"plist"]];
+    groupParticipants = [NSMutableArray array];
+    existingParticipants = [NSMutableArray arrayWithObject:[participants objectForKey:EXISTING_USERS_KEY]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,16 +50,29 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    NSInteger numRows = 0;
+    
+    switch (section) {
+        case 0:
+        {
+            numRows = [[self groupParticipants] count];
+        }
+            break;
+        case 1:
+        {
+            numRows = [[self existingParticipants] count] + 1;
+        }
+            break;
+        default:
+            break;
+    }
+    
+    return numRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -65,7 +80,26 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSUInteger section = [indexPath section];
+    NSUInteger row     = [indexPath row];
+    
+    switch (section) {
+        case 0:
+        {
+            [[cell textLabel] setText:[[self groupParticipants] objectAtIndex:row]];
+        }
+        case 1:
+        {
+            if (row < [[self existingParticipants] count]) {
+                [[cell textLabel] setText:[[self existingParticipants] objectAtIndex:row]];
+            } else {
+                [[cell textLabel] setText:@"Add New Participant..."];
+            }
+        }
+            break;
+        default:
+            break;
+    }
     
     return cell;
 }

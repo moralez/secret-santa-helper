@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B033C4681680197B00FCFCD0 /* NSMutableArray+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B033C4671680197B00FCFCD0 /* NSMutableArray+Helpers.m */; };
 		B06B57DA167524200047B106 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06B57D9167524200047B106 /* UIKit.framework */; };
 		B06B57DC167524200047B106 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06B57DB167524200047B106 /* Foundation.framework */; };
 		B06B57DE167524200047B106 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06B57DD167524200047B106 /* CoreGraphics.framework */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B033C4661680197B00FCFCD0 /* NSMutableArray+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Helpers.h"; sourceTree = "<group>"; };
+		B033C4671680197B00FCFCD0 /* NSMutableArray+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Helpers.m"; sourceTree = "<group>"; };
 		B06B57D5167524200047B106 /* secret-santa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "secret-santa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06B57D9167524200047B106 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B06B57DB167524200047B106 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B033C4641680196300FCFCD0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B033C4661680197B00FCFCD0 /* NSMutableArray+Helpers.h */,
+				B033C4671680197B00FCFCD0 /* NSMutableArray+Helpers.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		B06B57CA167524200047B106 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +102,7 @@
 		B06B57DF167524200047B106 /* secret-santa */ = {
 			isa = PBXGroup;
 			children = (
+				B033C4641680196300FCFCD0 /* Helpers */,
 				B06B5803167529030047B106 /* Core Data Models */,
 				B06B5802167528EF0047B106 /* View Controllers */,
 				B06B57E0167524200047B106 /* Supporting Files */,
@@ -206,6 +219,7 @@
 				B06B57EA167524210047B106 /* AppDelegate.m in Sources */,
 				B06B57F9167524210047B106 /* ViewController.m in Sources */,
 				B06B58011675273B0047B106 /* ParticipantTableViewController.m in Sources */,
+				B033C4681680197B00FCFCD0 /* NSMutableArray+Helpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +346,7 @@
 				B06B57FE167524210047B106 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

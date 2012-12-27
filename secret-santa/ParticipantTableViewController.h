@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#define EXISTING_USERS_KEY @"existing"
+
 @interface ParticipantTableViewController : UITableViewController
 
 @property (nonatomic,retain) NSMutableDictionary *participants;
+@property (nonatomic,retain) NSMutableArray      *groupParticipants;
+@property (nonatomic,retain) NSMutableArray      *existingParticipants;
 
 @end

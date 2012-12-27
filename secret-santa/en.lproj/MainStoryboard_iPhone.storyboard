@@ -14,7 +14,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYD-PS-bgi">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="Start New Group">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,18 +25,38 @@
                                     <segue destination="f82-aE-dKn" kind="push" id="uYN-hO-Jz1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mr. Sexy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZ8-La-yP8">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrL-ie-8RT">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Edit Existing Group">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4o-Xs-dZG">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lYD-PS-bgi" firstAttribute="top" secondItem="3" secondAttribute="top" constant="230" id="1vo-EZ-qHv"/>
-                            <constraint firstItem="JZ8-La-yP8" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="FGL-91-05Y"/>
-                            <constraint firstItem="JZ8-La-yP8" firstAttribute="centerX" secondItem="lYD-PS-bgi" secondAttribute="centerX" type="default" id="R75-yf-08I"/>
-                            <constraint firstItem="JZ8-La-yP8" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="hGJ-We-eMC"/>
+                            <constraint firstItem="lYD-PS-bgi" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2EG-Oe-gJc"/>
+                            <constraint firstAttribute="trailing" secondItem="lYD-PS-bgi" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="4Od-U7-L7b"/>
+                            <constraint firstItem="IrL-ie-8RT" firstAttribute="top" secondItem="lYD-PS-bgi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="80j-cx-asb"/>
+                            <constraint firstItem="k4o-Xs-dZG" firstAttribute="top" secondItem="IrL-ie-8RT" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="O37-dk-Qd6"/>
+                            <constraint firstAttribute="trailing" secondItem="IrL-ie-8RT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Pxt-bZ-kIy"/>
+                            <constraint firstItem="IrL-ie-8RT" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bMo-Yx-f6m"/>
+                            <constraint firstItem="k4o-Xs-dZG" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="plF-7a-jpb"/>
+                            <constraint firstAttribute="trailing" secondItem="k4o-Xs-dZG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rEj-tv-Th5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Secret Santa Helper" id="Tw7-bm-yyM"/>
@@ -45,20 +65,20 @@
             </objects>
             <point key="canvasLocation" x="609" y="88"/>
         </scene>
-        <!--Table View Controller - Add Participant-->
+        <!--Participant Table View Controller - Add Participant-->
         <scene sceneID="FUF-oh-28P">
             <objects>
-                <tableViewController id="f82-aE-dKn" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6qM-az-mJS">
+                <tableViewController id="f82-aE-dKn" customClass="ParticipantTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="6qM-az-mJS">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ddC-0K-zup">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -100,6 +120,12 @@
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ParticipantTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ParticipantTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addParticipant:"/>
+            </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
